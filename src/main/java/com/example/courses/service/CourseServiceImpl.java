@@ -23,24 +23,24 @@ public class CourseServiceImpl implements CourseService{
 
     @Override
     public Optional<Course> findCourse(int id) {
-        return Optional.empty();
+        return courseRepository.findById(id);
     }
 
     @Transactional (readOnly = false)
     @Override
     public Course createCourse(Course course) {
-        return null;
+        return courseRepository.save(course);
     }
 
     @Transactional (readOnly = false)
     @Override
     public Course editCourse(Course course) {
-        return null;
+        return courseRepository.save(course);
     }
 
     @Transactional (readOnly = false)
     @Override
     public void deleteCourse(int id) {
-
+        courseRepository.deleteById(id);
     }
 }
